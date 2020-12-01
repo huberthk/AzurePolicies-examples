@@ -1,0 +1,40 @@
+{
+ "properties": {
+  "displayName": "Inherit RG tag to resource: businessowner",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Automatically inherit the 'businessowner' tag from the resource group",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "f87f9e13-8ff2-4dd6-b351-0cdec70b9602",
+   "createdOn": "2020-11-25T09:07:08.1907655Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {},
+  "policyRule": {
+   "if": {
+    "field": "tags.businessowner",
+    "exists": "false"
+   },
+   "then": {
+    "effect": "modify",
+    "details": {
+     "roleDefinitionIds": [
+      "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+     ],
+     "operations": [
+      {
+       "operation": "addOrReplace",
+       "field": "tags.businessowner",
+       "value": "[resourcegroup().tags.businessowner]"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/21fcd78f-845c-4c02-b1b9-a0e796a7da52",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "21fcd78f-845c-4c02-b1b9-a0e796a7da52"
+}

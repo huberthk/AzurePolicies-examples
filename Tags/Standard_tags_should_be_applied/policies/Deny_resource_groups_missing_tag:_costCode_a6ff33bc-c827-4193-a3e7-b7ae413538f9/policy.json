@@ -1,0 +1,36 @@
+{
+ "properties": {
+  "displayName": "Deny resource groups missing tag: costCode",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Uniquely identifies where the costs of the resource should be associated in an external financial system.",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "f87f9e13-8ff2-4dd6-b351-0cdec70b9602",
+   "createdOn": "2020-11-25T09:00:51.4215474Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {},
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+     },
+     {
+      "field": "tags.costCode",
+      "exists": false
+     }
+    ]
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/a6ff33bc-c827-4193-a3e7-b7ae413538f9",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "a6ff33bc-c827-4193-a3e7-b7ae413538f9"
+}

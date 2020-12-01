@@ -1,0 +1,36 @@
+{
+ "properties": {
+  "displayName": "Audit resource groups missing tag: compositeApp",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Any resources tagged with the same value are considered part of the same application service",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "f87f9e13-8ff2-4dd6-b351-0cdec70b9602",
+   "createdOn": "2020-11-25T09:03:14.0914535Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {},
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+     },
+     {
+      "field": "tags.compositeApp",
+      "exists": false
+     }
+    ]
+   },
+   "then": {
+    "effect": "audit"
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/21fcd78f-845c-4c02-b1b9-a0e796a7d1a5",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "21fcd78f-845c-4c02-b1b9-a0e796a7d1a5"
+}

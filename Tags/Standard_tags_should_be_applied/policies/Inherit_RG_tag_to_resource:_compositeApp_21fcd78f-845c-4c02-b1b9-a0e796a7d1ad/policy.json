@@ -1,0 +1,40 @@
+{
+ "properties": {
+  "displayName": "Inherit RG tag to resource: compositeApp",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Automatically inherit the 'compositeApp' tag from the resource group",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "f87f9e13-8ff2-4dd6-b351-0cdec70b9602",
+   "createdOn": "2020-11-25T09:06:00.2947857Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {},
+  "policyRule": {
+   "if": {
+    "field": "tags.compositeApp",
+    "exists": "false"
+   },
+   "then": {
+    "effect": "modify",
+    "details": {
+     "roleDefinitionIds": [
+      "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+     ],
+     "operations": [
+      {
+       "operation": "addOrReplace",
+       "field": "tags.compositeApp",
+       "value": "[resourcegroup().tags.compositeApp]"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/21fcd78f-845c-4c02-b1b9-a0e796a7d1ad",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "21fcd78f-845c-4c02-b1b9-a0e796a7d1ad"
+}

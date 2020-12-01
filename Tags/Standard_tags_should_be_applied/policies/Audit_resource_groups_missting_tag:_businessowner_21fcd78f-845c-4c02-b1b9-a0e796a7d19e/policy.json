@@ -1,0 +1,36 @@
+{
+ "properties": {
+  "displayName": "Audit resource groups missting tag: businessowner",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Contains name/UPN of the person that is responsible for the resource from a business perspective.",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "f87f9e13-8ff2-4dd6-b351-0cdec70b9602",
+   "createdOn": "2020-11-25T09:02:16.9314375Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {},
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+     },
+     {
+      "field": "tags.businessowner",
+      "exists": false
+     }
+    ]
+   },
+   "then": {
+    "effect": "audit"
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/21fcd78f-845c-4c02-b1b9-a0e796a7d19e",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "21fcd78f-845c-4c02-b1b9-a0e796a7d19e"
+}
