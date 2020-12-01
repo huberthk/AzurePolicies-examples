@@ -1,0 +1,57 @@
+{
+ "properties": {
+  "displayName": "Standard tags should be applied",
+  "policyType": "Custom",
+  "description": "This initiative audits resources and resource groups without proper tags.",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "f87f9e13-8ff2-4dd6-b351-0cdec70b9602",
+   "createdOn": "2020-11-25T09:09:21.776616Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {},
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "Audit resource groups missting tag: businessowner_1",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/21fcd78f-845c-4c02-b1b9-a0e796a7d19e",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Audit resource groups missing tag: compositeApp_1",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/21fcd78f-845c-4c02-b1b9-a0e796a7d1a5",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Inherit RG tag to resource: compositeApp_1",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/21fcd78f-845c-4c02-b1b9-a0e796a7d1ad",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Inherit RG tag to resource: businessowner_1",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/21fcd78f-845c-4c02-b1b9-a0e796a7da52",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Inherit RG tag to resource: costCode_1",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/21fcd78f-845c-4c02-b1b9-a0e796a7da59",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deny resource groups missing tag: costCode_1",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policyDefinitions/a6ff33bc-c827-4193-a3e7-b7ae413538f9",
+    "parameters": {},
+    "groupNames": []
+   }
+  ],
+  "policyDefinitionGroups": []
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/HKESa/providers/Microsoft.Authorization/policySetDefinitions/5ed0531455e94922939acc5d",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "5ed0531455e94922939acc5d"
+}
